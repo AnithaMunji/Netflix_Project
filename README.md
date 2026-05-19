@@ -1,93 +1,178 @@
-# Netflix Dashboard -- Power BI Project
+#  Netflix Dashboard | Power BI Project
 
 ## Project Overview
 
-This project presents an interactive **Power BI dashboard** built using
-the *Netflix Movies and TV Shows* dataset. The dashboard provides
-insights into Netflix's content library through visual analysis of
-genres, ratings, release trends, and country-wise distribution.
+The Netflix Dashboard is an interactive Power BI project developed using the Netflix Movies and TV Shows dataset. The dashboard provides analytical insights into Netflix’s content library by exploring trends related to movies, TV shows, genres, ratings, release years, and country-wise content distribution.
 
-The goal of this project is to help users understand how Netflix's
-content has grown over time, what types of titles are most common
-(Movies vs TV Shows), and how ratings and countries contribute to
-Netflix's overall catalog. This dashboard serves as a strong portfolio
-addition for data analytics and BI learners.
+The project helps users understand content growth patterns, audience ratings, and global distribution of Netflix titles through dynamic visualizations and KPI-driven reporting.
 
-## Build the Dashboard --- Step by Step
+---
 
-### 1. Get the Data
+## Objectives
 
--   Download the **Netflix Movies and TV Shows** dataset from Kaggle (or
-    any reliable source).
+- Analyze Netflix content distribution across movies and TV shows
+- Identify trends in content releases over time
+- Explore genre-wise and rating-wise content patterns
+- Examine country-wise contribution to Netflix’s catalog
+- Build an interactive dashboard for data-driven insights
 
-### 2. Create a New Power BI File
+---
 
--   Open **Power BI Desktop**.
--   Go to **Get Data → Text/CSV**.
--   Load the Netflix CSV file.
+## Dataset Information
 
-### 3. Clean & Transform (Power Query)
+The project uses the Netflix Movies and TV Shows dataset containing:
 
--   Remove empty rows and unnecessary columns.
--   Convert **Date Added** to Date format.
--   Split multi-value fields like **Country** and **Cast** into rows
-    (optional).
--   Trim text, remove duplicates.
--   Fill missing values for **Release Year**.
--   Click **Close & Apply**.
+- Show ID
+- Title
+- Type (Movie / TV Show)
+- Director & Cast Information
+- Country
+- Release Year
+- Date Added
+- Rating
+- Duration
+- Genre Categories
 
-### 4. Data Model
+Dataset Source: Kaggle / Public Dataset
 
--   Verify table relationships (usually only one table required).
+---
 
-### 5. Add Key DAX Measures
+## Data Cleaning & Transformation
 
-``` dax
-1. Total Shows
-Total Shows = COUNTROWS('Netflix')
-2. Total Movies
-Total Movies = CALCULATE(COUNTROWS('Netflix'), 'Netflix'[type] = "Movie")
-3. Total TV Shows
-Total TV Shows = CALCULATE(COUNTROWS('Netflix'), 'Netflix'[type] = "TV Show")
-4. Titles Added by Year
-Titles Added = COUNT('Netflix'[show_id])
+Performed data preprocessing and transformation using Power Query:
 
-```
+- Removed empty rows and unnecessary columns
+- Converted “Date Added” into proper date format
+- Handled missing values and duplicate records
+- Standardized text formatting
+- Cleaned genre and country-related fields
+- Improved overall data consistency and quality
 
-### 7. Design Visuals
+---
 
-These visuals below represent the actual charts included in your PBIX file:
+## DAX Measures Used
 
- -   KPI Cards:Total Titles,Total Movies,Total TV Shows,Total Countries
- -   Donut Chart – Movies vs TV Shows
-        Shows the percentage split of Movie and TV Show titles.
- -   Bar Chart – Genre-wise Content Count
-        Displays top genres like:
- -   Column Chart – Rating Distribution
-       Shows count of titles under ratings:
- -   Map Visual – Titles by Country
-       A world map showing which countries produce the most Netflix content.
- -   Line Chart – Titles Added by Year
-       Trend of how many titles Netflix added each year.
- -   licers / Filters
-        dashboard includes slicers for:Type (Movie / TV Show), 
+- Total Shows = COUNTROWS('Netflix')
+- Total Movies = CALCULATE(COUNTROWS('Netflix'), 'Netflix'[type] = "Movie")
+- Total TV Shows = CALCULATE(COUNTROWS('Netflix'), 'Netflix'[type] = "TV Show")
+- Titles Added = COUNT('Netflix'[show_id])
 
-### 8. Interactivity & Formatting
+---
 
--   Add cross-filtering.
--   Sync slicers.
--   Add tooltips.
--   Use consistent colors, titles, and formatting.
+## Dashboard Features
 
-### 9. Performance & Validation
+Developed an interactive Power BI dashboard including:
 
--   Validate slicer functionality.
--   Remove unused columns.
--   Disable Auto Date/Time if unnecessary.
+- KPI Cards
+- Interactive Slicers & Filters
+- Donut Charts
+- Bar Charts
+- Column Charts
+- Line Charts
+- Map Visualizations
+- Trend Analysis
 
-### 10. Export & Documentation
+The dashboard enables users to explore Netflix content dynamically across multiple dimensions.
 
--   Save file as **Netflix_Dashboard.pbix**.
--   Capture dashboard screenshots.
--   Prepare README and other files.
+---
 
+## Key Analysis Performed
+
+- Movies vs TV Shows distribution analysis
+- Genre-wise content analysis
+- Rating distribution analysis
+- Country-wise Netflix content contribution
+- Year-wise title addition trends
+- Content growth pattern analysis
+- Interactive filtering based on title type
+
+---
+
+## Dashboard Visuals
+
+### KPI Cards
+- Total Titles
+- Total Movies
+- Total TV Shows
+- Total Countries
+
+### Donut Chart
+- Movies vs TV Shows distribution
+
+### Bar Chart
+- Genre-wise content count
+
+### Column Chart
+- Rating distribution across titles
+
+### Map Visualization
+- Country-wise content production analysis
+
+### Line Chart
+- Titles added by year trend analysis
+
+### Slicers / Filters
+- Movie / TV Show selection
+- Country filters
+- Genre filters
+- Rating filters
+
+---
+
+## Key Insights
+
+- Movies contributed a larger share of Netflix content compared to TV Shows
+- Content additions increased significantly over recent years
+- Certain genres dominated Netflix’s content library
+- Some countries contributed higher volumes of titles to the platform
+- Ratings analysis revealed the most common audience categories targeted by Netflix
+
+---
+
+## Recommendations
+
+- Expand content production in high-performing genres to increase audience engagement
+- Analyze viewer preferences across countries for localized content strategies
+- Increase investment in regions with growing content demand
+- Monitor yearly content growth trends to optimize release planning
+- Use dashboard insights to improve content recommendation strategies
+- Enhance audience targeting based on rating and genre preferences
+- Develop advanced analytics for predicting future content trends
+
+---
+
+## Tools & Technologies Used
+
+- Power BI
+- Power Query
+- DAX
+- Excel / CSV Dataset
+- Data Visualization Techniques
+
+---
+
+## Skills Demonstrated
+
+- Data Cleaning & Transformation
+- Power BI Dashboard Development
+- DAX Calculations
+- Data Visualization
+- Exploratory Data Analysis (EDA)
+- KPI Reporting
+- Business Insight Generation
+- Analytical Thinking
+
+---
+
+## Project Deliverables
+
+- Netflix_Dashboard.pbix
+- Dashboard Screenshots
+- README Documentation
+- Processed Dataset Files
+
+---
+
+## Conclusion
+
+This project demonstrates practical experience in Power BI dashboard development, data transformation, DAX calculations, and visual analytics. The dashboard provides meaningful insights into Netflix’s content ecosystem and showcases strong business intelligence and reporting skills relevant to Data Analyst and BI roles.
